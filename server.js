@@ -56,19 +56,17 @@ const listen = (port) => {
 }
 
 const main = () => {
-  if (process.argv.length !== 3) {
-    error(`Usage: node ${__filename} port`)
-  }
+  if (process.argv.length !== 3) error(`Usage: node ${__filename} port`)
 
   let port = process.argv[2]
 
-  if (isNaN(port)) {
-    error(`Invalid port ${port}`)
-  }
+  if (isNaN(port)) error(`Invalid port ${port}`)
+
   port = parseInt(port)
   listen(port)
 }
 
+// Main function in JavaScript
 if (require.main === module) {
   main()
 }

@@ -51,9 +51,8 @@ const main = () => {
 
   let [, , host, port] = process.argv
 
-  if (isNaN(port)) {
-    error(`Invalid port ${port}`)
-  }
+  if (isNaN(port)) error(`Invalid port ${port}`)
+
   port = Number(port)
 
   connect(host, port)
